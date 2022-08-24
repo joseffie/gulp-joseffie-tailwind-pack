@@ -1,0 +1,24 @@
+// burger variables located in
+// src/base/styles/_variables/_nav.scss
+
+.burger {
+  > span {
+    background-color: $burger-color;
+  }
+
+  &._active > span {
+    background-color: $burger-color-active;
+  }
+
+  &._active &__middle {
+    @apply scale-0;
+  }
+
+  &._active &__top {
+    @apply top-1/2 rotate-45 -translate-y-1/2;
+  }
+
+  &._active &__bottom {
+    @apply bottom-1/2 -rotate-45 translate-y-1/2;
+  }
+}

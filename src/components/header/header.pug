@@ -1,0 +1,9 @@
+include ../main-nav/main-nav.pug
+include ../burger/burger.pug
+
+mixin header
+  header.w-full.py-4.bg-white(class='shadow-[0_0_10px_0_rgba(0,0,0,0.5)]')&attributes(attributes)
+    .container
+      .flex.align-center.justify-between.gap-5
+        +burger
+        +main-nav

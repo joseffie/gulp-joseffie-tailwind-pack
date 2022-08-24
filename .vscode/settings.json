@@ -1,0 +1,44 @@
+{
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[pug]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+
+  "path-autocomplete.pathMappings": {
+    "@img": "${folder}/src/assets/images",
+    "@scss": "${folder}/src/base/styles",
+    "@js": "${folder}/src/base/scripts"
+  },
+
+  // Linters init
+  "eslint.validate": ["javascript", "javascriptreact", "typescriptreact"],
+  "puglint.enable": true,
+  "stylelint.validate": ["css", "scss", "postcss"],
+  "stylelint.configFile": ".stylelintrc.json",
+  "tailwindCSS.emmetCompletions": true,
+
+  // disable the standard VS Code linter
+  "tailwindCSS.validate": false,
+  "scss.validate": false,
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore"
+}

@@ -1,0 +1,12 @@
+// container variables located in
+// src/base/styles/_variables/_container.scss
+
+@layer components {
+  .container {
+    @apply mx-auto minsm_max-w-none minss_max-w-none minxs_max-w-none px-[#{$container-offset}];
+
+    @media (min-width: $container-width) {
+      @apply max-w-[#{$container-width}];
+    }
+  }
+}

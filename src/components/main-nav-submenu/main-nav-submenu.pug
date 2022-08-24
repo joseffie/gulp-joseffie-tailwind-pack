@@ -1,0 +1,11 @@
+mixin main-nav-submenu(data)
+  .main-nav-submenu.overflow-y-auto(class='max-h-[70vh]')&attributes(attributes)
+    ul.list-none.m-0.p-0
+      each item in data
+        li.p-0
+          - var subLinkClass = 'main-nav-submenu__link outline-none block px-3 py-2 text-mainColor text-sm sm_text-base no-underline duration-[125ms] hover_text-white hover_bg-mainColor focus_text-white focus_bg-mainColor active_shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)]';
+
+          if (data.parent && item.hash)
+            a(class=subLinkClass, href=`${data.parent}#${item.hash}`)= item.title
+          else
+            a(class=subLinkClass, href=item.url)= item.title

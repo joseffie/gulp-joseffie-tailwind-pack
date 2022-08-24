@@ -1,0 +1,16 @@
+// Colors
+$btn-text-color: #fff;
+$btn-hover-text-color: $btn-text-color;
+$btn-bg-color: #2563eb;
+$btn-hover-bg-color: darken($btn-bg-color, 5%);
+
+// Font
+$btn-font-family: inherit;
+$btn-font-size: 16px;
+
+// Paddings
+$btn-padding-vertical: 0.5rem; // 8px
+$btn-padding-horizontal: 1rem; // 16px
+
+// Other
+$btn-base-border-radius: 0;

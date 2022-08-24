@@ -1,0 +1,21 @@
+// button variables located in
+// src/base/styles/_variables/_button.scss
+
+.btn {
+  padding: $btn-padding-vertical $btn-padding-horizontal;
+  color: $btn-text-color;
+  font-size: $btn-font-size;
+  font-family: $btn-font-family;
+  background-color: $btn-bg-color;
+  border-radius: $btn-base-border-radius;
+
+  &:hover,
+  &:focus {
+    color: $btn-hover-text-color;
+    background-color: $btn-hover-bg-color;
+  }
+
+  &_rounded {
+    @apply rounded-lg;
+  }
+}

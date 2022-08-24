@@ -1,0 +1,7 @@
+.main-nav-submenu {
+  &__link {
+    @screen sm {
+      color: $nav-opened-text-color;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "root": true,
+
+  "modules": {
+    "bem-tools": {
+      "plugins": {
+        "create": {
+          "techs": ["pug", "scss", "js"],
+          "templateFolder": "templates",
+          "templates": {
+            "pug": "templates/pug.cjs",
+            "sass": "templates/sass.cjs",
+            "scss": "templates/scss.cjs",
+            "js": "templates/js.cjs"
+          },
+          "levels": {
+            "src/components": {
+              "default": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

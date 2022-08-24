@@ -1,0 +1,13 @@
+body {
+  &._no-scroll {
+    overflow: hidden;
+
+    @screen minsm {
+      overflow: auto;
+    }
+  }
+}
+
+.page__main {
+  padding-top: var(--header-height);
+}

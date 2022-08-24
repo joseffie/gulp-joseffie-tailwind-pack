@@ -1,0 +1,18 @@
+extends ../base/pug/default.pug
+
+include ../components/header/header.pug
+include ../components/footer/footer.pug
+include ../components/icon/icon.pug
+
+block pageConfig
+  -
+    title = 'Home'
+    pageUrl = '/'
+
+block header
+  +header
+
+block main
+
+block footer
+  +footer

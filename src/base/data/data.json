@@ -1,0 +1,30 @@
+{
+  "mainNavData": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "About us",
+      "url": "#"
+    },
+    {
+      "title": "Our blog",
+      "url": "#",
+      "submenu": [
+        {
+          "title": "Recent",
+          "url": "#"
+        },
+        {
+          "title": "Popular",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Contacts",
+      "url": "#"
+    }
+  ]
+}

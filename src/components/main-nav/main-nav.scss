@@ -1,0 +1,128 @@
+// nav variables located in
+// src/base/styles/_variables/_nav.scss
+
+.main-nav {
+  $item: '.main-nav__item';
+  $itemDrop: '.main-nav__item_dropdown';
+
+  @screen sm {
+    background-color: $nav-background;
+    transition: top 0.4s ease;
+
+    &._active {
+      top: 0;
+    }
+  }
+
+  &__item {
+    &_dropdown {
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        content: '';
+
+        @screen sm {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $nav-text-color;
+    font-size: $nav-font-size;
+
+    @screen sm {
+      color: $nav-opened-text-color;
+      font-size: $nav-opened-font-size;
+    }
+
+    &:hover {
+      color: $nav-text-color-hover;
+    }
+
+    .main-nav__item_active & {
+      color: $nav-text-color-active !important;
+    }
+
+    #{$itemDrop} & {
+      padding: 12px 32px 12px 8px;
+
+      @screen sm {
+        padding: 16px 8px;
+
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        display: inline-block;
+        width: 2px;
+        height: 6px;
+        margin-left: -12px;
+        background-color: rgb(0 0 0 / 0%);
+        border-bottom: 8px solid $nav-text-color;
+        transform: rotate(0);
+        transition: 200ms ease;
+        content: '';
+      }
+
+      &::before {
+        transform: translate(2px, -50%) rotate(-135deg);
+      }
+
+      &::after {
+        transform: translate(-2px, -50%) rotate(135deg);
+      }
+    }
+
+    #{$itemDrop}:hover & {
+      color: $nav-text-color-hover;
+      background-color: rgb(0 0 0 / 0%);
+      border-radius: 2px 2px 0 0;
+
+      &::before,
+      &::after {
+        border-bottom-color: $nav-text-color-hover;
+      }
+
+      &::before {
+        transform: translate(2px, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(-2px, -50%) rotate(45deg);
+      }
+    }
+  }
+
+  &__dropdown {
+    @screen sm {
+      position: static;
+      width: 100%;
+      margin: 0 auto;
+      background-color: rgb(0 0 0 / 0%);
+      box-shadow: none;
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    #{$item}:hover & {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

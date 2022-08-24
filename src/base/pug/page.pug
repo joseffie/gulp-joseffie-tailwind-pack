@@ -1,0 +1,14 @@
+block pageConfig
+  -
+    let title = ''
+    let pageUrl = ''
+    let bodyClass = []
+
+doctype html
+html(lang='en')
+  head
+    include ./head.pug
+
+  body.relative(class=bodyClass)
+    .relative.flex.flex-col.w-full.overflow-x-hidden.min-h-screen
+      block page

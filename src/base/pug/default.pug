@@ -1,0 +1,14 @@
+extends ./page.pug
+
+block page
+  .page__header.flex-none.fixed.top-0.right-0.left-0.w-full.z-50
+    block header
+
+  main.page__main.flex-grow.flex-shrink-0.basis-auto
+    block main
+
+  .page__footer.flex-none
+    block footer
+
+  block scripts
+    script(src='scripts/index.js')

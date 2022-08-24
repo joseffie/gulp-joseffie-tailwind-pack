@@ -1,0 +1,50 @@
+//- Usage example:
+  # usual
+  +breadcrumbs()
+    +breadcrumbs-item('Main', '/home')
+    +breadcrumbs-item('Services', '/services')
+    +breadcrumbs-item('Contact')
+
+  # with modification
+  +breadcrumbs('px-4 bg-gray-400')
+    +breadcrumbs-item('Main', '/home')
+    +breadcrumbs-item('Services', '/services', 'text-lg')
+
+mixin breadcrumbs(mods)
+  //- Params:
+  //- mods {string} - list of modifiers
+
+  -
+    var allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' ' + modsList[i].trim();
+      }
+    }
+
+  ul.mx-4.p-0.list-none(class=allMods, aria-label='Breadcrumb', role='navigation')&attributes(attributes)
+    block
+
+mixin breadcrumbs-item(text, href, mods)
+  //- Params:
+  //- text {string} - item content
+  //- href {string} - link of this item (if empty, then this is not a link, but a span)
+  //- mods {string} - list of modifiers
+
+  -
+    var allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' ' + modsList[i].trim();
+      }
+    }
+
+  li.inline-block.hyphens-auto.after_inline-block.last_after_hidden(
+    class='mr-[0.3125rem] after_ml-[0.3125rem] after_content-["/"]' + allMods
+  )&attributes(attributes)
+    if (typeof(href) !== 'undefined' && href)
+      a.text-inherit.hover_text-mainColor.no-underline(class='duration-[175ms]', href=href)!= text
+    else
+      span!= text

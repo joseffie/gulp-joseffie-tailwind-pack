@@ -1,0 +1,28 @@
+include ../main-nav-submenu/main-nav-submenu.pug
+
+mixin main-nav
+  nav.main-nav.shadow-none.sm_fixed.sm_-top-full.sm_left-0.sm_w-full.sm_h-full.sm_overflow-auto.sm_z-70&attributes(attributes)
+    ul.flex.items-center.gap-5.list-none.p-0.sm_flex-col.sm_items-center.sm_justify-center.sm_gap-3.sm_min-h-full.sm_pt-6
+      each item in mainNavData
+        - var itemClasses = ['main-nav__item relative p-0 sm_mr-0 sm_text-center'];
+
+        if (item.submenu)
+          - itemClasses.push('main-nav__item_dropdown');
+
+        if (item.url === pageUrl)
+          - itemClasses.push('main-nav__item_active');
+
+        li(class=itemClasses)
+          - var linkClass = 'main-nav__link relative block px-3 py-2 font-medium tracking-wide uppercase no-underline sm_px-4';
+
+          if (item.url)
+            a(class=linkClass, href=item.url)= item.title
+          else
+            span(class=linkClass)= item.title
+
+          if (item.submenu)
+            - item.submenu.parent = item.url;
+            .main-nav__dropdown.absolute.top-full.left-0.w-64.p-0.overflow-hidden.bg-white.invisible.opacity-0.z-70.pointer-events-none(
+              class='shadow-[0_2px_18px_rgba(0,0,0,0.25)]'
+            )
+              +main-nav-submenu(item.submenu)

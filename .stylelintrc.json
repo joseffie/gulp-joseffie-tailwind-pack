@@ -1,0 +1,762 @@
+{
+  "syntax": "scss",
+  "extends": "stylelint-config-standard-scss",
+  "plugins": ["stylelint-scss", "stylelint-order"],
+  "defaultSeverity": "warning",
+  "rules": {
+    "order/order": [
+      "declarations",
+      "custom-properties",
+      {
+        "type": "at-rule",
+        "name": "include"
+      },
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:\\w+$"
+      },
+      {
+        "type": "rule",
+        "selector": "^\\.[-_a-zA-Z0-9]+"
+      },
+      {
+        "type": "rule",
+        "selector": "^&__[-a-z0-9]+"
+      },
+      {
+        "type": "rule",
+        "selector": "^&--[-a-z0-9]+"
+      }
+    ],
+    "order/properties-order": [
+      [
+        {
+          "properties": ["position", "top", "right", "bottom", "left", "z-index"]
+        },
+        {
+          "properties": [
+            "display",
+            "flex",
+            "flex-basis",
+            "flex-direction",
+            "flex-flow",
+            "flex-grow",
+            "flex-shrink",
+            "flex-wrap",
+            "grid",
+            "grid-area",
+            "grid-auto-rows",
+            "grid-auto-columns",
+            "grid-auto-flow",
+            "grid-gap",
+            "grid-row",
+            "grid-row-start",
+            "grid-row-end",
+            "grid-row-gap",
+            "grid-column",
+            "grid-column-start",
+            "grid-column-end",
+            "grid-column-gap",
+            "grid-template",
+            "grid-template-areas",
+            "grid-template-rows",
+            "grid-template-columns",
+            "gap",
+            "align-content",
+            "align-items",
+            "align-self",
+            "justify-content",
+            "justify-items",
+            "justify-self",
+            "order",
+            "float",
+            "clear",
+            "box-sizing",
+            "width",
+            "min-width",
+            "max-width",
+            "height",
+            "min-height",
+            "max-height",
+            "margin",
+            "margin-top",
+            "margin-right",
+            "margin-bottom",
+            "margin-left",
+            "padding",
+            "padding-top",
+            "padding-right",
+            "padding-bottom",
+            "padding-left",
+            "object-fit",
+            "object-position",
+            "overflow",
+            "overflow-x",
+            "overflow-y"
+          ]
+        },
+        {
+          "properties": [
+            "color",
+            "font",
+            "font-weight",
+            "font-size",
+            "font-family",
+            "font-style",
+            "font-variant",
+            "font-size-adjust",
+            "font-stretch",
+            "font-effect",
+            "font-emphasize",
+            "font-emphasize-position",
+            "font-emphasize-style",
+            "font-smooth",
+            "line-height",
+            "direction",
+            "letter-spacing",
+            "white-space",
+            "text-align",
+            "text-align-last",
+            "text-transform",
+            "text-decoration",
+            "text-emphasis",
+            "text-emphasis-color",
+            "text-emphasis-style",
+            "text-emphasis-position",
+            "text-indent",
+            "text-justify",
+            "text-outline",
+            "text-wrap",
+            "text-overflow",
+            "text-overflow-ellipsis",
+            "text-overflow-mode",
+            "text-orientation",
+            "text-shadow",
+            "vertical-align",
+            "word-wrap",
+            "word-break",
+            "word-spacing",
+            "overflow-wrap",
+            "tab-size",
+            "hyphens",
+            "unicode-bidi",
+            "columns",
+            "column-count",
+            "column-fill",
+            "column-gap",
+            "column-rule",
+            "column-rule-color",
+            "column-rule-style",
+            "column-rule-width",
+            "column-span",
+            "column-width",
+            "page-break-after",
+            "page-break-before",
+            "page-break-inside",
+            "src"
+          ]
+        },
+        {
+          "properties": [
+            "list-style",
+            "list-style-position",
+            "list-style-type",
+            "list-style-image",
+            "table-layout",
+            "empty-cells",
+            "caption-side",
+            "background",
+            "background-color",
+            "background-image",
+            "background-repeat",
+            "background-position",
+            "background-position-x",
+            "background-position-y",
+            "background-size",
+            "background-clip",
+            "background-origin",
+            "background-attachment",
+            "background-blend-mode"
+          ]
+        },
+        {
+          "properties": [
+            "border",
+            "border-color",
+            "border-style",
+            "border-width",
+            "border-top",
+            "border-top-color",
+            "border-top-width",
+            "border-top-style",
+            "border-right",
+            "border-right-color",
+            "border-right-width",
+            "border-right-style",
+            "border-bottom",
+            "border-bottom-color",
+            "border-bottom-width",
+            "border-bottom-style",
+            "border-left",
+            "border-left-color",
+            "border-left-width",
+            "border-left-style",
+            "border-radius",
+            "border-top-left-radius",
+            "border-top-right-radius",
+            "border-bottom-right-radius",
+            "border-bottom-left-radius",
+            "border-image",
+            "border-image-source",
+            "border-image-slice",
+            "border-image-width",
+            "border-image-outset",
+            "border-image-repeat",
+            "border-collapse",
+            "border-spacing"
+          ]
+        },
+        {
+          "properties": [
+            "outline",
+            "outline-width",
+            "outline-style",
+            "outline-color",
+            "outline-offset",
+            "box-shadow",
+            "box-decoration-break",
+            "transform",
+            "transform-origin",
+            "transform-style",
+            "backface-visibility",
+            "perspective",
+            "perspective-origin",
+            "visibility",
+            "cursor",
+            "opacity",
+            "filter",
+            "isolation",
+            "backdrop-filter",
+            "mix-blend-mode"
+          ]
+        },
+        {
+          "properties": [
+            "transition",
+            "transition-delay",
+            "transition-timing-function",
+            "transition-duration",
+            "transition-property",
+            "animation",
+            "animation-name",
+            "animation-duration",
+            "animation-play-state",
+            "animation-timing-function",
+            "animation-delay",
+            "animation-iteration-count",
+            "animation-direction",
+            "animation-fill-mode"
+          ]
+        },
+        {
+          "properties": [
+            "appearance",
+            "content",
+            "clip",
+            "clip-path",
+            "counter-reset",
+            "counter-increment",
+            "resize",
+            "user-select",
+            "nav-index",
+            "nav-up",
+            "nav-right",
+            "nav-down",
+            "nav-left",
+            "pointer-events",
+            "quotes",
+            "touch-action",
+            "will-change",
+            "zoom",
+            "fill",
+            "fill-rule",
+            "clip-rule",
+            "stroke"
+          ]
+        }
+      ],
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/dollar-variable-pattern": null,
+    "scss/no-global-function-names": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "scss/at-import-no-partial-leading-underscore": null,
+
+    "no-invalid-position-at-import-rule": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["tailwind", "apply", "layer", "variants", "responsive", "screen"]
+      }
+    ],
+    "color-hex-case": [
+      "lower",
+      {
+        "severity": "warning",
+        "message": "HEX colors should be in lower case"
+      }
+    ],
+    "color-no-invalid-hex": [
+      true,
+      {
+        "message": "HEX colors must be correctly specified"
+      }
+    ],
+    "font-family-name-quotes": [
+      "always-where-recommended",
+      {
+        "message": "The font name must be enclosed in quotation marks"
+      }
+    ],
+    "font-family-no-duplicate-names": [
+      true,
+      {
+        "message": "Do not repeat font names"
+      }
+    ],
+    "string-quotes": [
+      "single",
+      {
+        "message": "You must use single quotes"
+      }
+    ],
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      {
+        "message": "The font-family declaration must end with the name of the common group (sans-serif, serif, etc.)"
+      }
+    ],
+    "font-weight-notation": [
+      "numeric",
+      {
+        "message": "Font weight should be indicated in numbers",
+        "ignore": ["relative"]
+      }
+    ],
+    "function-comma-space-after": [
+      "always",
+      {
+        "message": "A space is required after the comma"
+      }
+    ],
+    "function-comma-space-before": [
+      "never",
+      {
+        "message": "There should not be a space before the comma"
+      }
+    ],
+    "function-comma-newline-before": [
+      "never-multi-line",
+      {
+        "message": "There should not be a line break before a comma"
+      }
+    ],
+    "function-comma-newline-after": [
+      "never-multi-line",
+      {
+        "message": "There should not be a line break after a comma"
+      }
+    ],
+    "number-leading-zero": [
+      "always",
+      {
+        "message": "Zero must precede the dot"
+      }
+    ],
+    "number-no-trailing-zeros": [
+      true,
+      {
+        "message": "Optional zero in a fraction"
+      }
+    ],
+    "time-min-milliseconds": [
+      100,
+      {
+        "message": "There is no point in using time less than 100ms"
+      }
+    ],
+    "unit-case": [
+      "lower",
+      {
+        "message": "Units of measurement should be in lowercase"
+      }
+    ],
+    "value-keyword-case": [
+      "lower",
+      {
+        "message": "Property values must be in lowercase",
+        "ignoreProperties": ["/font-/"]
+      }
+    ],
+    "value-list-comma-space-after": [
+      "always-single-line",
+      {
+        "message": "Spaces are required in values after the comma"
+      }
+    ],
+    "value-list-comma-space-before": [
+      "never",
+      {
+        "message": "Spaces are not allowed in values иefore a comma"
+      }
+    ],
+    "value-list-comma-newline-after": null,
+    "property-case": [
+      "lower",
+      {
+        "message": "Property value must be in lowercase"
+      }
+    ],
+    "property-no-vendor-prefix": null,
+    "declaration-bang-space-after": [
+      "never",
+      {
+        "message": "Remove the space after the exclamation point"
+      }
+    ],
+    "declaration-colon-space-after": [
+      "always-single-line",
+      {
+        "message": "A space is required after the colon"
+      }
+    ],
+    "declaration-colon-space-before": [
+      "never",
+      {
+        "message": "Space not allowed before colon"
+      }
+    ],
+    "declaration-colon-newline-after": null,
+    "unit-disallowed-list": [
+      ["mm", "cm", "in", "pc"],
+      {
+        "message": "Unit data prohibited"
+      }
+    ],
+    "declaration-block-no-duplicate-properties": [
+      true,
+      {
+        "message": "Don't repeat the rules"
+      }
+    ],
+    "declaration-block-semicolon-newline-after": [
+      "always",
+      {
+        "message": "A line break is required after the semicolon"
+      }
+    ],
+    "declaration-block-trailing-semicolon": [
+      "always",
+      {
+        "message": "The property must end with a semicolon"
+      }
+    ],
+    "block-closing-brace-empty-line-before": [
+      "never",
+      {
+        "message": "There must not be an empty line before «}»"
+      }
+    ],
+    "block-closing-brace-newline-before": [
+      "always",
+      {
+        "message": "A line break is required before «}»"
+      }
+    ],
+    "block-opening-brace-newline-after": [
+      "always",
+      {
+        "message": "A line break is required after «}»"
+      }
+    ],
+    "block-opening-brace-space-before": [
+      "always",
+      {
+        "message": "A space is required before «{»"
+      }
+    ],
+    "selector-attribute-brackets-space-inside": [
+      "never",
+      {
+        "message": "No spaces allowed in attribute selector"
+      }
+    ],
+    "selector-attribute-operator-space-after": [
+      "never",
+      {
+        "message": "No spaces allowed in attribute selector"
+      }
+    ],
+    "selector-attribute-operator-space-before": [
+      "never",
+      {
+        "message": "No spaces allowed in attribute selector"
+      }
+    ],
+    "selector-attribute-quotes": [
+      "always",
+      {
+        "message": "Quotes must be used in attribute selector"
+      }
+    ],
+    "selector-combinator-space-after": [
+      "always",
+      {
+        "message": "A space is required in the selector after the combinator"
+      }
+    ],
+    "selector-combinator-space-before": [
+      "always",
+      {
+        "message": "A space is required in the selector before the combinator"
+      }
+    ],
+    "selector-class-pattern": null,
+    "selector-pseudo-class-case": [
+      "lower",
+      {
+        "message": "Pseudo-classes must be in lowercase"
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "message": "This pseudo-class does not exist"
+      }
+    ],
+    "selector-pseudo-class-parentheses-space-inside": [
+      "never",
+      {
+        "message": "Pseudo-classes should not leave spaces before and after parentheses"
+      }
+    ],
+    "selector-pseudo-element-case": [
+      "lower",
+      {
+        "message": "Pseudo-elements must be in lowercase"
+      }
+    ],
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "message": "This pseudo-class does not exist"
+      }
+    ],
+    "selector-type-case": [
+      "lower",
+      {
+        "message": "Selectors must be in lowercase"
+      }
+    ],
+    "selector-type-no-unknown": [
+      true,
+      {
+        "message": "This selector does not exist"
+      }
+    ],
+    "selector-max-empty-lines": [
+      0,
+      {
+        "message": "Blank lines between selectors are not allowed"
+      }
+    ],
+    "selector-no-vendor-prefix": null,
+    "selector-list-comma-newline-after": [
+      "always",
+      {
+        "message": "In selectors, you need to put a line break after a comma"
+      }
+    ],
+    "selector-list-comma-newline-before": [
+      "never-multi-line",
+      {
+        "message": "In selectors, there should not be a line break before the comma"
+      }
+    ],
+    "selector-list-comma-space-after": [
+      "always-single-line",
+      {
+        "message": "Selectors must have a space after the comma"
+      }
+    ],
+    "selector-list-comma-space-before": [
+      "never",
+      {
+        "message": "Selectors must not have a space before the comma"
+      }
+    ],
+    "media-feature-colon-space-after": [
+      "always",
+      {
+        "message": "In @media after «:» spaces are required"
+      }
+    ],
+    "media-feature-colon-space-before": [
+      "never",
+      {
+        "message": "Spaces are not allowed before «:» in @media"
+      }
+    ],
+    "media-feature-name-case": [
+      "lower",
+      {
+        "message": "@media should be in lowercase"
+      }
+    ],
+    "media-feature-parentheses-space-inside": [
+      "never",
+      {
+        "message": "Spaces after «(» and before «)» cannot be used."
+      }
+    ],
+    "media-feature-range-operator-space-after": [
+      "always",
+      {
+        "message": "There must be a space before the range operator"
+      }
+    ],
+    "media-feature-range-operator-space-before": [
+      "always",
+      {
+        "message": "There must be a space after the range operator"
+      }
+    ],
+    "no-descending-specificity": null,
+    "at-rule-empty-line-before": null,
+    "at-rule-name-case": [
+      "lower",
+      {
+        "message": "@-rules should be in lowercase"
+      }
+    ],
+    "at-rule-name-space-after": [
+      "always",
+      {
+        "message": "The @-rule must be followed by a space"
+      }
+    ],
+    "at-rule-semicolon-newline-after": [
+      "always",
+      {
+        "message": "@-rules must have a line break after colons"
+      }
+    ],
+    "at-rule-semicolon-space-before": [
+      "never",
+      {
+        "message": "There must be no spaces before the semicolon in @-rules"
+      }
+    ],
+    "comment-empty-line-before": [
+      "always",
+      {
+        "message": "The comment must be preceded by an empty line",
+        "except": ["first-nested"],
+        "ignore": ["stylelint-commands"]
+      }
+    ],
+    "comment-no-empty": [
+      true,
+      {
+        "message": "Empty comment should be removed"
+      }
+    ],
+    "comment-whitespace-inside": [
+      "always",
+      {
+        "message": "There must always be whitespace inside the markers"
+      }
+    ],
+    "indentation": [
+      2,
+      {
+        "message": "Use 2 spaces to indent"
+      }
+    ],
+    "max-empty-lines": [
+      2,
+      {
+        "message": "Maximum empty lines: 2"
+      }
+    ],
+    "no-duplicate-selectors": [
+      true,
+      {
+        "message": "You can't duplicate selectors"
+      }
+    ],
+    "no-eol-whitespace": null,
+    "no-extra-semicolons": [
+      true,
+      {
+        "message": "Two semicolons in a row are not allowed"
+      }
+    ],
+    "no-missing-end-of-source-newline": [
+      true,
+      {
+        "message": "The file must end with an empty line"
+      }
+    ],
+    "media-feature-name-no-unknown": [
+      true,
+      {
+        "message": "Such a media-condition does not exist"
+      }
+    ],
+    "no-duplicate-at-import-rules": [
+      true,
+      {
+        "message": "Do not re-import the file"
+      }
+    ],
+    "value-list-max-empty-lines": [
+      0,
+      {
+        "message": "Empty strings in property values are not allowed"
+      }
+    ],
+    "declaration-block-semicolon-newline-before": [
+      "never-multi-line",
+      {
+        "message": "Line break before semicolon is not allowed"
+      }
+    ],
+    "declaration-block-semicolon-space-before": [
+      "never",
+      {
+        "message": "Space before semicolon is not allowed"
+      }
+    ],
+    "selector-descendant-combinator-no-non-space": [
+      true,
+      {
+        "message": "Combined selectors should be separated by a single space"
+      }
+    ],
+    "length-zero-no-unit": null,
+    "linebreaks": [
+      "unix",
+      {
+        "severity": "warning",
+        "message": "Linebreaks must always be LF"
+      }
+    ]
+  }
+}
