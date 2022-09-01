@@ -30,7 +30,7 @@ Make sure you have [NodeJS](https://nodejs.org/en/) and [Yarn](https://yarnpkg.c
 1. Install the [Gulp](https://gulpjs.com/) and [bem-tools-core](https://github.com/bem-tools/bem-tools-create) globally:
 
 ```
-$ yarn add --globally gulp bem-tools-core bem-tools-create
+$ yarn add --globall gulp bem-tools-core bem-tools-create
 ```
 
 2. Clone the project using:
@@ -42,7 +42,7 @@ $ git clone https://github.com/joseffie/gulp-joseffie-tailwind-pack.git my-proje
 3. Go to the project and run:
 
 ```
-$ yarn add
+$ yarn
 ```
 
 4. After installing the dependencies, start the dev server:
@@ -74,7 +74,7 @@ element.font-gray-900.hover:font-blue-500
 element.font-gray-900.hover_font-blue-500
 ```
 
-- The `[`, `]`, `{` and `}` characters used to write [arbitrary values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values). You will have to write classes for arbitrary values in the `class` attribute.
+- The `[` and `]` characters used to write [arbitrary values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values). You will have to write classes for arbitrary values in the `class` attribute.
 
 ```pug
 //- not supported, the code will return an error
@@ -84,14 +84,16 @@ element.max-w-lg.mx-auto.px-[25px]
 element.max-w-lg.mx-auto(class='px-[25px]')
 ```
 
-- Likewise with the `/` character, which is used in fractional values.
+- Likewise with the `/` character, which is used in fractional values, and with `!` character which is used for important defining.
 
 ```pug
 //- not supported, the code will return an error
 element.w-1/2
+element.!text-blue-100
 
 //- write
 element(class='w-1/2')
+element(class='!text-blue-100')
 ```
 
 ## Component Generator
