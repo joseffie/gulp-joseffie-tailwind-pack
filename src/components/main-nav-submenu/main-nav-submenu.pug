@@ -3,9 +3,15 @@ mixin main-nav-submenu(data)
     ul.list-none.m-0.p-0
       each item in data
         li.p-0
-          - var subLinkClass = 'main-nav-submenu__link outline-none block px-3 py-2 text-mainColor text-sm sm_text-base no-underline duration-[125ms] hover_text-white hover_bg-mainColor focus_text-white focus_bg-mainColor active_shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)]';
+          -
+            const subLinkStyle = [
+              'main-nav-submenu__link block outline-none px-3 py-2',
+              'text-main text-sm sm_text-base no-underline duration-[125ms]',
+              'hover_text-white hover_bg-main focus_text-white focus_bg-main',
+              'active_shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)]'
+            ]
 
           if (data.parent && item.hash)
-            a(class=subLinkClass, href=`${data.parent}#${item.hash}`)= item.title
+            a(class=subLinkStyle.join(' '), href=`${data.parent}#${item.hash}`)= item.title
           else
-            a(class=subLinkClass, href=item.url)= item.title
+            a(class=subLinkStyle.join(' '), href=item.url)= item.title

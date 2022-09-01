@@ -1,4 +1,6 @@
 const twHyphens = require('tailwindcss-hyphens');
+const twTextFill = require('tailwindcss-text-fill');
+const twBorderGradients = require('tailwindcss-border-gradients');
 
 module.exports = {
   separator: '_',
@@ -67,6 +69,7 @@ module.exports = {
       '2xl': ['24px', '32px'],
       '3xl': ['30px', '36px'],
       '4xl': ['36px', '40px'],
+      '4.5xl': ['40px', '44px'],
       '5xl': ['48px', '1'],
       '6xl': ['64px', '1'],
     },
@@ -75,14 +78,15 @@ module.exports = {
       transparent: 'transparent',
       inherit: 'inherit',
       current: 'currentColor',
+
       white: '#fff',
       black: '#000',
 
       // Semantic colors
-      mainColor: '#2563eb',
-      successColor: '#16a34a',
-      warningColor: '#eab308',
-      dangerColor: '#b91c1c',
+      main: '#2563eb',
+      success: '#16a34a',
+      warning: '#eab308',
+      danger: '#b91c1c',
 
       // Other colors
       gray: {
@@ -211,7 +215,35 @@ module.exports = {
       default: theme('colors.gray.300', 'currentColor'),
     }),
     textColor: (theme) => theme('colors'),
+    linearBorderGradients: {
+      directions: {
+        t: 'to top',
+        tr: 'to top right',
+        r: 'to right',
+        br: 'to bottom right',
+        b: 'to bottom',
+        bl: 'to bottom left',
+        l: 'to left',
+        tl: 'to top left',
+      },
+      colors: (theme) => theme('backgroundImage'),
+    },
+    repeatingLinearBorderGradients: (theme) => ({
+      directions: theme('linearBorderGradients.directions'),
+      colors: theme('linearBorderGradients.colors'),
+      lengths: {
+        sm: '25px',
+        md: '50px',
+        lg: '100px',
+      },
+    }),
   },
-  corePlugins: {},
-  plugins: [twHyphens],
+  variants: {
+    linearBorderGradients: ['responsive'],
+    repeatingLinearBorderGradients: ['responsive'],
+  },
+  corePlugins: {
+    container: false,
+  },
+  plugins: [twHyphens, twTextFill, twBorderGradients],
 };

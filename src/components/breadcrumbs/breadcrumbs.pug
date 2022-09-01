@@ -1,6 +1,6 @@
 //- Usage example:
   # usual
-  +breadcrumbs()
+  +breadcrumbs
     +breadcrumbs-item('Main', '/home')
     +breadcrumbs-item('Services', '/services')
     +breadcrumbs-item('Contact')
@@ -15,10 +15,11 @@ mixin breadcrumbs(mods)
   //- mods {string} - list of modifiers
 
   -
-    var allMods = '';
+    let allMods = '';
+
     if (typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
+      const modsList = mods.split(',');
+      for (let i = 0; i < modsList.length; i++) {
         allMods = allMods + ' ' + modsList[i].trim();
       }
     }
@@ -33,18 +34,27 @@ mixin breadcrumbs-item(text, href, mods)
   //- mods {string} - list of modifiers
 
   -
-    var allMods = '';
+    let allMods = '';
+
     if (typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
+      const modsList = mods.split(',');
+      for (let i = 0; i < modsList.length; i++) {
         allMods = allMods + ' ' + modsList[i].trim();
       }
     }
 
-  li.inline-block.hyphens-auto.after_inline-block.last_after_hidden(
-    class='mr-[0.3125rem] after_ml-[0.3125rem] after_content-["/"]' + allMods
-  )&attributes(attributes)
+  -
+    const breadcrumbItemStyle = [
+      'inline-block hyphens-auto after_inline-block last_after_hidden',
+      'mr-[0.3125rem] after_ml-[0.3125rem] after_content-["/"]'
+    ]
+
+    const breadcrumbLinkStyle = [
+      'text-inherit no-underline duration-200 hover_text-main'
+    ]
+
+  li(class=breadcrumbItemStyle.join(' ') + allMods)&attributes(attributes)
     if (typeof(href) !== 'undefined' && href)
-      a.text-inherit.hover_text-mainColor.no-underline(class='duration-[175ms]', href=href)!= text
+      a(class=breadcrumbLinkStyle.join(' '), href=href)!= text
     else
       span!= text

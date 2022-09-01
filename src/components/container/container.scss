@@ -1,12 +1,31 @@
 // container variables located in
 // src/base/styles/_variables/_container.scss
 
-@layer components {
-  .container {
-    @apply mx-auto minsm_max-w-none minss_max-w-none minxs_max-w-none px-[#{$container-offset}];
+.container {
+  @apply max-w-none mx-auto px-[#{$container-offset}];
 
-    @media (min-width: $container-width) {
-      @apply max-w-[#{$container-width}];
-    }
+  @screen minsm {
+    @apply max-w-3xl; // 768px
+  }
+
+  @screen minmd {
+    @apply max-w-[1060px];
+  }
+
+  @screen minlg {
+    @apply max-w-[1200px];
+  }
+
+  // by default container width equals 1400px + 2 container offsets (50px)
+  @media (min-width: $container-width) {
+    @apply max-w-[#{$container-width}];
   }
 }
+
+// .containers {
+//   @apply mx-auto minsm_max-w-none minss_max-w-none minxs_max-w-none minxl_max-w-[#{$container-width}] px-[#{$container-offset}];
+
+//   @media (min-width: $container-width) {
+//     @apply max-w-[#{$container-width}];
+//   }
+// }

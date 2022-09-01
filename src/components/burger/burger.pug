@@ -4,10 +4,13 @@ mixin burger(label)
 
   - label = label ? label : 'Toggle navigation';
 
-  .burger.block.relative.block.cursor-pointer.minsm_hidden(
-    class='z-[60] min-w-[30px] max-w-[30px] h-[22px]',
-    aria-label=label
-  )&attributes(attributes)
+  -
+    const burgerStyle = [
+      'burger block relative cursor-pointer z-80 min-w-[30px]',
+      'max-w-[30px] h-[22px] minsm_hidden'
+    ]
+
+  div(class=burgerStyle.join(' '), aria-label=label)&attributes(attributes)
     span.burger__top.absolute.left-0.top-0.w-full.duration-400(class='h-[10%]')
     span.burger__middle.absolute.left-0.w-full.scale-100.duration-400(
       class='h-[10%] -translate-y-1/2 top-1/2'

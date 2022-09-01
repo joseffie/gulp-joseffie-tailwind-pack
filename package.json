@@ -3,7 +3,7 @@
   "description": "Front-end boilerplate and framework based on Gulp, Pug, SCSS, Tailwind and Babel",
   "author": "Ivan Gavrilich (joseffie)",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "dev": "gulp",
     "build": "gulp build --production",
@@ -95,7 +95,9 @@
     "stylelint-config-standard-scss": "^5.0.0",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.3.0",
+    "tailwindcss-border-gradients": "^2.0.3",
     "tailwindcss-hyphens": "^0.1.0",
+    "tailwindcss-text-fill": "^0.2.0",
     "terser-webpack-plugin": "^5.3.5",
     "webp-converter": "2.2.3",
     "webpack": "^5.74.0",
