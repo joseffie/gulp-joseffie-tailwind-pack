@@ -1,5 +1,5 @@
 import { isWebp } from './helpers/is.js';
-import setPaddingFromHeader from './helpers/setPaddingFromHeader.js';
+import matchWidthResize from './helpers/matchWidthResize.js';
 
 isWebp((support) => {
   if (support === true) {
@@ -9,6 +9,12 @@ isWebp((support) => {
   }
 });
 
-setPaddingFromHeader();
+import components from '../../components/components.js';
 
-import '../../components/components.js';
+components.burger.initBurgerMenu();
+components.header.setHeaderHeight();
+
+matchWidthResize(() => {
+  // Update header height CSS variable on resize width screen
+  components.header.setHeaderHeight();
+});
